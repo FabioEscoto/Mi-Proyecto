@@ -1,0 +1,28 @@
+/* Estilos comunes para los productos */
+.product-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.product-card button {
+    margin-top: 10px;
+}
+
+/* Asegura que todo se ajuste en pantallas pequeñas */
+@media (max-width: 768px) {
+    .product-card {
+        text-align: center;
+    }
+}
