@@ -4,50 +4,143 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Proyecto</title>
+    
+    <!-- Bootstrap & Open-Iconic -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="node_modules/open-iconic/font/css/open-iconic-bootstrap.min.css" rel="stylesheet">
     <link href="src/css/style.css" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Barra de Navegación Fija -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Proyecto</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <!-- Jumbotron -->
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center mt-5">
         <h1>Bienvenidos a Mi Proyecto</h1>
     </div>
 
-    <!-- Container con 3 párrafos -->
-    <div class="container">
+    <div class="container mt-4">
+        
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Productos</li>
+            </ol>
+        </nav>
+
+        <!-- Características del Producto -->
         <h2>Características del Producto</h2>
         <p>Primer párrafo con descripción del producto.</p>
         <p>Segundo párrafo con más detalles sobre lo que ofrecemos.</p>
         <p>Tercer párrafo que habla sobre los beneficios del producto.</p>
 
-        <!-- Lista de Productos con Grillas y Flex -->
+        <!-- Productos -->
         <h3>Productos Destacados</h3>
         <div class="row">
             <div class="col-md-4">
-                <div class="product-card">
-                    <h4>Producto 1</h4>
-                    <p>Descripción breve del Producto 1.</p>
-                    <button class="btn btn-primary">Ver más</button>
+                <div class="card">
+                    <img src="src/img/producto1.jpg" class="card-img-top" alt="Producto 1">
+                    <div class="card-body">
+                        <h4 class="card-title">Producto 1</h4>
+                        <p class="card-text">Descripción breve del Producto 1.</p>
+                        <button class="btn btn-primary">Ver más</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="product-card">
-                    <h4>Producto 2</h4>
-                    <p>Descripción breve del Producto 2.</p>
-                    <button class="btn btn-primary">Ver más</button>
+                <div class="card">
+                    <img src="src/img/producto2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h4 class="card-title">Producto 2</h4>
+                        <p class="card-text">Descripción breve del Producto 2.</p>
+                        <button class="btn btn-primary">Ver más</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
-                <div class="product-card">
-                    <h4>Producto 3</h4>
-                    <p>Descripción breve del Producto 3.</p>
-                    <button class="btn btn-primary">Ver más</button>
+                <div class="card">
+                    <img src="src/img/producto3.jpg" class="card-img-top" alt="Producto 3">
+                    <div class="card-body">
+                        <h4 class="card-title">Producto 3</h4>
+                        <p class="card-text">Descripción breve del Producto 3.</p>
+                        <button class="btn btn-primary">Ver más</button>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- Formulario de Contacto -->
+        <h3 class="mt-5">Contáctanos</h3>
+        <form>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="servicio" class="form-label">Selecciona un servicio</label>
+                <select class="form-select" id="servicio">
+                    <option>Opción 1</option>
+                    <option>Opción 2</option>
+                </select>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="suscripcion">
+                <label class="form-check-label" for="suscripcion">Quiero recibir novedades</label>
+            </div>
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+
+        <!-- Tabla con Scroll y Iconos -->
+        <h3 class="mt-5">Historial de Compras</h3>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Producto 1</td>
+                        <td>20/02/2025</td>
+                        <td>Enviado</td>
+                        <td><span class="oi oi-eye"></span> Ver</td>
+                    </tr>
+                    <tr>
+                        <td>Producto 2</td>
+                        <td>18/02/2025</td>
+                        <td>Pendiente</td>
+                        <td><span class="oi oi-pencil"></span> Editar</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <!-- Footer -->
-        <footer class="mt-5">
+        <footer class="mt-5 bg-light p-3">
             <div class="row">
                 <div class="col text-left">
                     <address>
@@ -62,11 +155,13 @@
                 </div>
             </div>
         </footer>
+
     </div>
 
     <!-- JS -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
