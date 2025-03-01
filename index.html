@@ -61,7 +61,7 @@
     
     <!-- Modal -->
     <div class="container mt-4">
-        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#suscripcionModal">
+        <button type="button" class="btn btn-success" id="suscribirseBtn" data-bs-toggle="modal" data-bs-target="#suscripcionModal">
             Suscribirse
         </button>
         <div class="modal fade" id="suscripcionModal" tabindex="-1">
@@ -89,5 +89,37 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Seleccionar el botón de suscripción
+        const suscribirseBtn = document.getElementById('suscribirseBtn');
+        const suscripcionModal = new bootstrap.Modal(document.getElementById('suscripcionModal'));
+
+        // Registrar eventos del modal
+        $('#suscripcionModal').on('show.bs.modal', function () {
+            console.log('El modal comienza a abrirse');
+            // Cambiar el color y deshabilitar el botón
+            suscribirseBtn.disabled = true;
+            suscribirseBtn.classList.remove('btn-success');
+            suscribirseBtn.classList.add('btn-secondary');
+        });
+
+        $('#suscripcionModal').on('shown.bs.modal', function () {
+            console.log('El modal se ha abierto completamente');
+        });
+
+        $('#suscripcionModal').on('hide.bs.modal', function () {
+            console.log('El modal comienza a cerrarse');
+        });
+
+        $('#suscripcionModal').on('hidden.bs.modal', function () {
+            console.log('El modal se ha cerrado completamente');
+            // Reactivar el botón y restaurar el color
+            suscribirseBtn.disabled = false;
+            suscribirseBtn.classList.remove('btn-secondary');
+            suscribirseBtn.classList.add('btn-success');
+        });
+    </script>
+
 </body>
 </html>
